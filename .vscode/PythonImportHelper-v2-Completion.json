@@ -1,0 +1,236 @@
+[
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matrices",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matrices",
+        "description": "matrices",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "degrees_to_radians",
+        "kind": 2,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "def degrees_to_radians(latitude,longitude):\n    latitude_rad = np.radians(latitude)\n    longitude_rad = np.radians(latitude)\n    degrees = [latitude, longitude]\n    radians = [latitude_rad,longitude_rad]\n    print(f\"{degrees} degrees is equal to {radians} radians\")\n    return latitude_rad, longitude_rad\ndef radians_to_degrees(latitude_rad,longitude_rad):\n    latitude = np.degrees(latitude_rad)\n    longitude = np.degrees(longitude_rad)",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "radians_to_degrees",
+        "kind": 2,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "def radians_to_degrees(latitude_rad,longitude_rad):\n    latitude = np.degrees(latitude_rad)\n    longitude = np.degrees(longitude_rad)\n    degrees = [latitude, longitude]\n    radians = [latitude_rad,longitude_rad]\n    print(f\"latitude and longitude {radians} radians is equal to {degrees} degrees\")\n    return latitude, longitude",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "hight_operations",
+        "kind": 2,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "def hight_operations(N, h=0, H=0, ter=True):\n    while N:\n        try:\n            if ter != True:\n                if h==0:\n                    print('ERROR: No geodesic height H available, enter a H value and try again')\n                    exit\n                else:\n                    H = h - N\n                    return H",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "extract_latitude_longitude",
+        "kind": 2,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "def extract_latitude_longitude():\n    return\ndef geodetic_to_Cartesian(v,h,latitude, longitude):\n    hight_operations()\n    _geodetic_to_Cartesian()",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "geodetic_to_Cartesian",
+        "kind": 2,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "def geodetic_to_Cartesian(v,h,latitude, longitude):\n    hight_operations()\n    _geodetic_to_Cartesian()",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "ϕ",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "ϕ = latitude \nλ = longitude\nX = (ν + h) cos ϕ cos λ\nY = (ν + h) cos ϕ sen λ\nZ = [ν*(1 − e2 )+ h] sen ϕ\nh = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "λ",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "λ = longitude\nX = (ν + h) cos ϕ cos λ\nY = (ν + h) cos ϕ sen λ\nZ = [ν*(1 − e2 )+ h] sen ϕ\nh = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "X = (ν + h) cos ϕ cos λ\nY = (ν + h) cos ϕ sen λ\nZ = [ν*(1 − e2 )+ h] sen ϕ\nh = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "Y",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "Y = (ν + h) cos ϕ sen λ\nZ = [ν*(1 − e2 )+ h] sen ϕ\nh = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians\nnp.arctan(x) — Inverse tangent (arctangent), returns angle in radians",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "Z",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "Z = [ν*(1 − e2 )+ h] sen ϕ\nh = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians\nnp.arctan(x) — Inverse tangent (arctangent), returns angle in radians\nnp.degrees(x) — Converts radians to degrees",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 5,
+        "importPath": "coordenates.geodesicas_to_cartecianas",
+        "description": "coordenates.geodesicas_to_cartecianas",
+        "peekOfCode": "h = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians\nnp.arctan(x) — Inverse tangent (arctangent), returns angle in radians\nnp.degrees(x) — Converts radians to degrees\nnp.radians(x) — Converts degrees to radians",
+        "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "n = int(input(\"introduce el numero de sensores: \"))\nprint(n)\n#Pregunta 2\n#cuantas coordenadas consideramos por cada sensor ? = xyz x1 y1 z1 xn y\nx = 0\ny = 0\nz = 0\nvarx=\"x\"\nvary=\"y\"\nvarz=\"z\"",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "x = 0\ny = 0\nz = 0\nvarx=\"x\"\nvary=\"y\"\nvarz=\"z\"\ncount=0\ncoordinatesx = {}\ncoordinatesy = {}\ncoordinatesz = {}",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "y = 0\nz = 0\nvarx=\"x\"\nvary=\"y\"\nvarz=\"z\"\ncount=0\ncoordinatesx = {}\ncoordinatesy = {}\ncoordinatesz = {}\n#para las x",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "z",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "z = 0\nvarx=\"x\"\nvary=\"y\"\nvarz=\"z\"\ncount=0\ncoordinatesx = {}\ncoordinatesy = {}\ncoordinatesz = {}\n#para las x\nfor i in range[n]:",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "coordinatesx",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "coordinatesx = {}\ncoordinatesy = {}\ncoordinatesz = {}\n#para las x\nfor i in range[n]:\n    print(i)",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "coordinatesy",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "coordinatesy = {}\ncoordinatesz = {}\n#para las x\nfor i in range[n]:\n    print(i)",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "coordinatesz",
+        "kind": 5,
+        "importPath": "input_data",
+        "description": "input_data",
+        "peekOfCode": "coordinatesz = {}\n#para las x\nfor i in range[n]:\n    print(i)",
+        "detail": "input_data",
+        "documentation": {}
+    },
+    {
+        "label": "sensors_definition",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop\n            # Initialize sensor dictionary\n            sensors[f\"Sensor_{i}\"] = {\n                \"coordinates\": {",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "manual_sensors_coordinates_definition",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def manual_sensors_coordinates_definition():\n    #1.- Arrays definitions \n    ############BODY FRAME ###############\n    \"\"\" \n    coordinates = {'x':[0.4,0.4,-0.4,-0.4],\n                   'y': [-0.4,0.4,-0.4,0.4],\n                   'z': [-0.015,-0.015,-0.015,-0.015]\n                   } \"\"\"\n    # x y z coordinates               \n    bframe_coordinates = {'REC2':[0.4,-0.4,-0.015],",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def main():\n    manual_sensors_coordinates_definition()\nmain()",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "coordinates",
+        "kind": 5,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "coordinates = {}\nn = 3\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "n = 3\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop\n            # Initialize sensor dictionary",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "opeaciones",
+        "description": "opeaciones",
+        "peekOfCode": "df = data.main()\nprint(df)",
+        "detail": "opeaciones",
+        "documentation": {}
+    }
+]
