@@ -9,12 +9,29 @@
         "documentation": {}
     },
     {
+        "label": "CRS",
+        "importPath": "pyproj",
+        "description": "pyproj",
+        "isExtraImport": true,
+        "detail": "pyproj",
+        "documentation": {}
+    },
+    {
         "label": "matrices",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "matrices",
         "description": "matrices",
         "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
@@ -114,6 +131,24 @@
         "description": "coordenates.geodesicas_to_cartecianas",
         "peekOfCode": "h = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians\nnp.arctan(x) — Inverse tangent (arctangent), returns angle in radians\nnp.degrees(x) — Converts radians to degrees\nnp.radians(x) — Converts degrees to radians",
         "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "get_ref_elipsoid_parameters",
+        "kind": 2,
+        "importPath": "elipsoide_grs80",
+        "description": "elipsoide_grs80",
+        "peekOfCode": "def get_ref_elipsoid_parameters(epsg=\"GRS80\",latitude=0):\n    # Define the CRS (Coordinate Reference System) that uses the GRS 80 ellipsoid\n    # EPSG:7019 corresponds to the GRS 80 ellipsoid\n    # Define the GRS 80 ellipsoid using its name\n    grs80 = CRS.from_string(\"GRS80\")\n    # Extract the ellipsoid parameters\n    semi_major_axis = grs80.ellipsoid.semi_major_metre  # Semi-major axis (a)\n    inverse_flattening = grs80.ellipsoid.inverse_flattening  # Inverse flattening (1/f)\n    # Calculate the semi-minor axis and flattening manually\n    flattening = 1 / inverse_flattening",
+        "detail": "elipsoide_grs80",
+        "documentation": {}
+    },
+    {
+        "label": "r_M_N_calculation",
+        "kind": 2,
+        "importPath": "elipsoide_grs80",
+        "description": "elipsoide_grs80",
+        "peekOfCode": "def r_M_N_calculation(semi_minor_axis,semi_major_axis,latitude,longitude,e_cuadrado):\n    #M = (semi_major_axis**(1-e_cuadrado))/(1-((e_cuadrado*np.sin(longitude))))\n    r = (semi_minor_axis)/(np.sqrt(1-(np.cos(latitude))))\n    #N = \n    return r",
+        "detail": "elipsoide_grs80",
         "documentation": {}
     },
     {
@@ -231,6 +266,42 @@
         "description": "opeaciones",
         "peekOfCode": "df = data.main()\nprint(df)",
         "detail": "opeaciones",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_coordinates",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "iframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)",
+        "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_keys",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "iframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)\niframe_matrix = np.vstack([iframe_keys, iframe_values.T])\nprint(iframe_matrix)",
+        "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_values",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "iframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)\niframe_matrix = np.vstack([iframe_keys, iframe_values.T])\nprint(iframe_matrix)",
+        "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_matrix",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "iframe_matrix = np.vstack([iframe_keys, iframe_values.T])\nprint(iframe_matrix)",
+        "detail": "ss",
         "documentation": {}
     }
 ]

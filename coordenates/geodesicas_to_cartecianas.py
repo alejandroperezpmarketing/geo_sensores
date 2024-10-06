@@ -48,7 +48,7 @@ def hight_operations(N, h=0, H=0, ter=True):
                     exit
 
                 else:
-
+                    
                     h = H + N
                     return h
         

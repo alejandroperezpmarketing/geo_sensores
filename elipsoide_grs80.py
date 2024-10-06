@@ -22,7 +22,7 @@ def get_ref_elipsoid_parameters(epsg="GRS80",latitude=0):
     print(f"Flattening (f): {flattening}")
     print(f"Inverse Flattening (1/f): {inverse_flattening}")
     
-    ######Calculation of r, N, e, e² and M
+    ######Calculation of r, e, e² and M
     
     e= np.sqrt((2*flattening-(flattening**2)))
     e_cuadrado  = ((2*flattening)-(flattening**2))
