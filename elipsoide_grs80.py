@@ -17,16 +17,18 @@ def get_ref_elipsoid_parameters(epsg="GRS80",latitude=0):
     semi_minor_axis = semi_major_axis * (1 - flattening)
 
     # Print the parameters
-    print(f"Semi-major axis (a): {semi_major_axis} meters")
-    print(f"Semi-minor axis (b): {semi_minor_axis} meters")
-    print(f"Flattening (f): {flattening}")
-    print(f"Inverse Flattening (1/f): {inverse_flattening}")
+    #print(f"Semi-major axis (a): {semi_major_axis} meters")
+    #print(f"Semi-minor axis (b): {semi_minor_axis} meters")
+    #print(f"Flattening (f): {flattening}")
+    #print(f"Inverse Flattening (1/f): {inverse_flattening}")
     
     ######Calculation of r, e, e² and M
     
     e= np.sqrt((2*flattening-(flattening**2)))
     e_cuadrado  = ((2*flattening)-(flattening**2))
-    return semi_major_axis, semi_minor_axis, flattening, inverse_flattening
+    
+    return semi_major_axis, semi_minor_axis, flattening, inverse_flattening, e, e_cuadrado
+
 
 
 get_ref_elipsoid_parameters()

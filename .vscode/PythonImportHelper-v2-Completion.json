@@ -9,11 +9,61 @@
         "documentation": {}
     },
     {
+        "label": "floor",
+        "importPath": "math",
+        "description": "math",
+        "isExtraImport": true,
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "degrees_operations",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "degrees_operations",
+        "description": "degrees_operations",
+        "detail": "degrees_operations",
+        "documentation": {}
+    },
+    {
         "label": "CRS",
         "importPath": "pyproj",
         "description": "pyproj",
         "isExtraImport": true,
         "detail": "pyproj",
+        "documentation": {}
+    },
+    {
+        "label": "degrees_operations",
+        "importPath": "coordenates",
+        "description": "coordenates",
+        "isExtraImport": true,
+        "detail": "coordenates",
+        "documentation": {}
+    },
+    {
+        "label": "geodesicas_to_cartecianas",
+        "importPath": "coordenates",
+        "description": "coordenates",
+        "isExtraImport": true,
+        "detail": "coordenates",
+        "documentation": {}
+    },
+    {
+        "label": "degrees_operations",
+        "importPath": "coordenates",
+        "description": "coordenates",
+        "isExtraImport": true,
+        "detail": "coordenates",
         "documentation": {}
     },
     {
@@ -26,12 +76,20 @@
         "documentation": {}
     },
     {
-        "label": "json",
+        "label": "h_elip_coordinates",
+        "importPath": "matrices",
+        "description": "matrices",
+        "isExtraImport": true,
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "elipsoide_grs80",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
+        "importPath": "elipsoide_grs80",
+        "description": "elipsoide_grs80",
+        "detail": "elipsoide_grs80",
         "documentation": {}
     },
     {
@@ -48,7 +106,151 @@
         "kind": 2,
         "importPath": "coordenates.degrees_operations",
         "description": "coordenates.degrees_operations",
-        "peekOfCode": "def radians_to_degrees(latitude_rad,longitude_rad):\n    latitude = np.degrees(latitude_rad)\n    longitude = np.degrees(longitude_rad)\n    degrees = [latitude, longitude]\n    radians = [latitude_rad,longitude_rad]\n    print(f\"latitude and longitude {radians} radians is equal to {degrees} degrees\")\n    return latitude, longitude",
+        "peekOfCode": "def radians_to_degrees(latitude_rad,longitude_rad):\n    latitude = np.degrees(latitude_rad)\n    longitude = np.degrees(longitude_rad)\n    degrees = [latitude, longitude]\n    radians = [latitude_rad,longitude_rad]\n    print(f\"latitude and longitude {radians} radians is equal to {degrees} degrees\")\n    return latitude, longitude\n# Function to convert decimal degrees to DMS\ndef decimal_to_dms(decimal_degree):\n    degrees = int(decimal_degree)",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_to_dms",
+        "kind": 2,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "def decimal_to_dms(decimal_degree):\n    degrees = int(decimal_degree)\n    minutes_full = abs((decimal_degree - degrees) * 60)\n    minutes = int(minutes_full)\n    seconds = (minutes_full - minutes) * 60\n    return degrees, minutes, seconds\n# Example latitude and longitude\nlatitude = 40.748817\nlongitude = -73.985428\n# Convert to DMS format",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "dms_to_decimal",
+        "kind": 2,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "def dms_to_decimal(degrees, minutes, seconds):\n    decimal_degree = degrees + minutes / 60 + seconds / 3600\n    return decimal_degree\n# Convert Decimal Degrees to Hexadecimal\ndef decimal_to_hex(decimal_degree):\n    # Convert to absolute hex (ignoring sign), and preserve 6 decimal places if necessary\n    hex_value = float.hex(decimal_degree)\n    return hex_value\n#####################################\n# Example DMS values (latitude and longitude)",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_to_hex",
+        "kind": 2,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "def decimal_to_hex(decimal_degree):\n    # Convert to absolute hex (ignoring sign), and preserve 6 decimal places if necessary\n    hex_value = float.hex(decimal_degree)\n    return hex_value\n#####################################\n# Example DMS values (latitude and longitude)\ndms_lat = (40, 44, 55.74)  # Latitude DMS: 40° 44' 55.74\"\ndms_lon = (-73, 59, 7.54)  # Longitude DMS: -73° 59' 7.54\"\n# Convert DMS to Decimal Degrees\ndecimal_lat = dms_to_decimal(*dms_lat)",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "latitude",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "latitude = 40.748817\nlongitude = -73.985428\n# Convert to DMS format\nlat_dms = decimal_to_dms(latitude)\nlon_dms = decimal_to_dms(longitude)\n# Print the result\nprint(f\"Latitude DMS: {lat_dms[0]}° {lat_dms[1]}' {lat_dms[2]:.2f}\\\"\")\nprint(f\"Longitude DMS: {lon_dms[0]}° {lon_dms[1]}' {lon_dms[2]:.2f}\\\"\")\n\"\"\"\nDecimal Degrees=D+M/60+S/3600",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "longitude",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "longitude = -73.985428\n# Convert to DMS format\nlat_dms = decimal_to_dms(latitude)\nlon_dms = decimal_to_dms(longitude)\n# Print the result\nprint(f\"Latitude DMS: {lat_dms[0]}° {lat_dms[1]}' {lat_dms[2]:.2f}\\\"\")\nprint(f\"Longitude DMS: {lon_dms[0]}° {lon_dms[1]}' {lon_dms[2]:.2f}\\\"\")\n\"\"\"\nDecimal Degrees=D+M/60+S/3600\nD = degrees",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "lat_dms",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "lat_dms = decimal_to_dms(latitude)\nlon_dms = decimal_to_dms(longitude)\n# Print the result\nprint(f\"Latitude DMS: {lat_dms[0]}° {lat_dms[1]}' {lat_dms[2]:.2f}\\\"\")\nprint(f\"Longitude DMS: {lon_dms[0]}° {lon_dms[1]}' {lon_dms[2]:.2f}\\\"\")\n\"\"\"\nDecimal Degrees=D+M/60+S/3600\nD = degrees\nM = minutes\nS = seconds",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "lon_dms",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "lon_dms = decimal_to_dms(longitude)\n# Print the result\nprint(f\"Latitude DMS: {lat_dms[0]}° {lat_dms[1]}' {lat_dms[2]:.2f}\\\"\")\nprint(f\"Longitude DMS: {lon_dms[0]}° {lon_dms[1]}' {lon_dms[2]:.2f}\\\"\")\n\"\"\"\nDecimal Degrees=D+M/60+S/3600\nD = degrees\nM = minutes\nS = seconds\n\"\"\"",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "D",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "D = degrees\nM = minutes\nS = seconds\n\"\"\"\n# Function to convert DMS to Decimal Degrees\ndef dms_to_decimal(degrees, minutes, seconds):\n    decimal_degree = degrees + minutes / 60 + seconds / 3600\n    return decimal_degree\n# Convert Decimal Degrees to Hexadecimal\ndef decimal_to_hex(decimal_degree):",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "M = minutes\nS = seconds\n\"\"\"\n# Function to convert DMS to Decimal Degrees\ndef dms_to_decimal(degrees, minutes, seconds):\n    decimal_degree = degrees + minutes / 60 + seconds / 3600\n    return decimal_degree\n# Convert Decimal Degrees to Hexadecimal\ndef decimal_to_hex(decimal_degree):\n    # Convert to absolute hex (ignoring sign), and preserve 6 decimal places if necessary",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "S",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "S = seconds\n\"\"\"\n# Function to convert DMS to Decimal Degrees\ndef dms_to_decimal(degrees, minutes, seconds):\n    decimal_degree = degrees + minutes / 60 + seconds / 3600\n    return decimal_degree\n# Convert Decimal Degrees to Hexadecimal\ndef decimal_to_hex(decimal_degree):\n    # Convert to absolute hex (ignoring sign), and preserve 6 decimal places if necessary\n    hex_value = float.hex(decimal_degree)",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "dms_lat",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "dms_lat = (40, 44, 55.74)  # Latitude DMS: 40° 44' 55.74\"\ndms_lon = (-73, 59, 7.54)  # Longitude DMS: -73° 59' 7.54\"\n# Convert DMS to Decimal Degrees\ndecimal_lat = dms_to_decimal(*dms_lat)\ndecimal_lon = dms_to_decimal(*dms_lon)\n# Convert Decimal Degrees to Hexadecimal\nhex_lat = decimal_to_hex(decimal_lat)\nhex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "dms_lon",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "dms_lon = (-73, 59, 7.54)  # Longitude DMS: -73° 59' 7.54\"\n# Convert DMS to Decimal Degrees\ndecimal_lat = dms_to_decimal(*dms_lat)\ndecimal_lon = dms_to_decimal(*dms_lon)\n# Convert Decimal Degrees to Hexadecimal\nhex_lat = decimal_to_hex(decimal_lat)\nhex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")\nprint(f\"Longitude (Decimal): {decimal_lon}, Longitude (Hexadecimal): {hex_lon}\")",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_lat",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "decimal_lat = dms_to_decimal(*dms_lat)\ndecimal_lon = dms_to_decimal(*dms_lon)\n# Convert Decimal Degrees to Hexadecimal\nhex_lat = decimal_to_hex(decimal_lat)\nhex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")\nprint(f\"Longitude (Decimal): {decimal_lon}, Longitude (Hexadecimal): {hex_lon}\")",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_lon",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "decimal_lon = dms_to_decimal(*dms_lon)\n# Convert Decimal Degrees to Hexadecimal\nhex_lat = decimal_to_hex(decimal_lat)\nhex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")\nprint(f\"Longitude (Decimal): {decimal_lon}, Longitude (Hexadecimal): {hex_lon}\")",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "hex_lat",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "hex_lat = decimal_to_hex(decimal_lat)\nhex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")\nprint(f\"Longitude (Decimal): {decimal_lon}, Longitude (Hexadecimal): {hex_lon}\")",
+        "detail": "coordenates.degrees_operations",
+        "documentation": {}
+    },
+    {
+        "label": "hex_lon",
+        "kind": 5,
+        "importPath": "coordenates.degrees_operations",
+        "description": "coordenates.degrees_operations",
+        "peekOfCode": "hex_lon = decimal_to_hex(decimal_lon)\n# Print the results\nprint(f\"Latitude (Decimal): {decimal_lat}, Latitude (Hexadecimal): {hex_lat}\")\nprint(f\"Longitude (Decimal): {decimal_lon}, Longitude (Hexadecimal): {hex_lon}\")",
         "detail": "coordenates.degrees_operations",
         "documentation": {}
     },
@@ -131,6 +333,69 @@
         "description": "coordenates.geodesicas_to_cartecianas",
         "peekOfCode": "h = H + N\nnumpy operations -------------------\nnp.sin(x) — Sine of angles in radians\nnp.cos(x) — Cosine of angles in radians\nnp.tan(x) — Tangent of angles in radians\nnp.arcsin(x) — Inverse sine (arcsine), returns angle in radians\nnp.arccos(x) — Inverse cosine (arccosine), returns angle in radians\nnp.arctan(x) — Inverse tangent (arctangent), returns angle in radians\nnp.degrees(x) — Converts radians to degrees\nnp.radians(x) — Converts degrees to radians",
         "detail": "coordenates.geodesicas_to_cartecianas",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_coordinates",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "iframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\ndecimal_lat_list = []\ndecimal_long_list = []\ndecimal_lat_long_list = []\niframe_keys = list(iframe_coordinates.keys())\nfor keys in iframe_coordinates:\n    degrees_lat = iframe_coordinates[keys][0][0]",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_lat_list",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "decimal_lat_list = []\ndecimal_long_list = []\ndecimal_lat_long_list = []\niframe_keys = list(iframe_coordinates.keys())\nfor keys in iframe_coordinates:\n    degrees_lat = iframe_coordinates[keys][0][0]\n    degrees_long = iframe_coordinates[keys][1][0]\n    minutes_lat = iframe_coordinates[keys][0][1]\n    minutes_long = iframe_coordinates[keys][1][1]\n    seconds_lat = iframe_coordinates[keys][0][2]",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_long_list",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "decimal_long_list = []\ndecimal_lat_long_list = []\niframe_keys = list(iframe_coordinates.keys())\nfor keys in iframe_coordinates:\n    degrees_lat = iframe_coordinates[keys][0][0]\n    degrees_long = iframe_coordinates[keys][1][0]\n    minutes_lat = iframe_coordinates[keys][0][1]\n    minutes_long = iframe_coordinates[keys][1][1]\n    seconds_lat = iframe_coordinates[keys][0][2]\n    seconds_long = iframe_coordinates[keys][1][2]",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_lat_long_list",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "decimal_lat_long_list = []\niframe_keys = list(iframe_coordinates.keys())\nfor keys in iframe_coordinates:\n    degrees_lat = iframe_coordinates[keys][0][0]\n    degrees_long = iframe_coordinates[keys][1][0]\n    minutes_lat = iframe_coordinates[keys][0][1]\n    minutes_long = iframe_coordinates[keys][1][1]\n    seconds_lat = iframe_coordinates[keys][0][2]\n    seconds_long = iframe_coordinates[keys][1][2]\n    decimal_lat = do.dms_to_decimal(degrees_lat,minutes_lat,seconds_lat)",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_keys",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "iframe_keys = list(iframe_coordinates.keys())\nfor keys in iframe_coordinates:\n    degrees_lat = iframe_coordinates[keys][0][0]\n    degrees_long = iframe_coordinates[keys][1][0]\n    minutes_lat = iframe_coordinates[keys][0][1]\n    minutes_long = iframe_coordinates[keys][1][1]\n    seconds_lat = iframe_coordinates[keys][0][2]\n    seconds_long = iframe_coordinates[keys][1][2]\n    decimal_lat = do.dms_to_decimal(degrees_lat,minutes_lat,seconds_lat)\n    decimal_long =  do.dms_to_decimal(degrees_long,minutes_long,seconds_long)",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_iframe_matrix",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "decimal_iframe_matrix = np.array(decimal_lat_long_list)\nprint(iframe_keys)\ndecimal_iframe_matrix = np.vstack([iframe_keys,decimal_iframe_matrix.T])\n#print(decimal_bframe_matrix)\nprint(decimal_iframe_matrix)",
+        "detail": "coordenates.test",
+        "documentation": {}
+    },
+    {
+        "label": "decimal_iframe_matrix",
+        "kind": 5,
+        "importPath": "coordenates.test",
+        "description": "coordenates.test",
+        "peekOfCode": "decimal_iframe_matrix = np.vstack([iframe_keys,decimal_iframe_matrix.T])\n#print(decimal_bframe_matrix)\nprint(decimal_iframe_matrix)",
+        "detail": "coordenates.test",
         "documentation": {}
     },
     {
@@ -224,20 +489,47 @@
         "documentation": {}
     },
     {
-        "label": "manual_sensors_coordinates_definition",
+        "label": "manual_bframe_coordinates_definition",
         "kind": 2,
         "importPath": "matrices",
         "description": "matrices",
-        "peekOfCode": "def manual_sensors_coordinates_definition():\n    #1.- Arrays definitions \n    ############BODY FRAME ###############\n    \"\"\" \n    coordinates = {'x':[0.4,0.4,-0.4,-0.4],\n                   'y': [-0.4,0.4,-0.4,0.4],\n                   'z': [-0.015,-0.015,-0.015,-0.015]\n                   } \"\"\"\n    # x y z coordinates               \n    bframe_coordinates = {'REC2':[0.4,-0.4,-0.015],",
+        "peekOfCode": "def manual_bframe_coordinates_definition(bframe_coordinates=bframe_coordinates):\n    #this function create the bframe array using the bframe coordinates dectionary\n    #this allow us to do matrix opeartions\n    #1.- Arrays definitions \n    ############BODY FRAME ###############\n    \"\"\" \n    coordinates = {'x':[0.4,0.4,-0.4,-0.4],\n                   'y': [-0.4,0.4,-0.4,0.4],\n                   'z': [-0.015,-0.015,-0.015,-0.015]\n                   } \"\"\"",
         "detail": "matrices",
         "documentation": {}
     },
     {
-        "label": "main",
+        "label": "manual_iframe_definition",
         "kind": 2,
         "importPath": "matrices",
         "description": "matrices",
-        "peekOfCode": "def main():\n    manual_sensors_coordinates_definition()\nmain()",
+        "peekOfCode": "def manual_iframe_definition(iframe_coordinates=iframe_coordinates):\n    #this function use the coordinate transformation functions to format the iframe coordinates from dms to decimal to be able to make operations\n    #this allow us to do matrix opeartions \n #########################\n    #iframe_Matrix in decimal\n    decimal_lat_list = []\n    decimal_long_list = []\n    decimal_lat_long_list = []\n    iframe_keys = list(iframe_coordinates.keys())\n    for keys in iframe_coordinates:",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "manual_h_elipsoid_array_definition",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def manual_h_elipsoid_array_definition(h_elip_coordinates=h_elip_coordinates):\n    # h_elip_keys = list(h_elip_coordinates.keys())\n    # h_elip_values = np.array(list(h_elip_coordinates.values()))\n    # Adding keys as a separate row (with the help of np.vstack)\n    # h_elip_matrix = np.vstack([h_elip_keys, h_elip_values.T])\n    #h_elip_title = [\"Receptor\",\"h_ellipsoidal\"]\n    h_elip_matrix = np.array(h_elip_coordinates)\n    h_elip_keys = list(list(iframe_coordinates.keys()))\n    #print(h_elip_matrix[:, 0:1])\n    #h_elip_matrix_transposed = np.vstack([h_elip_keys,h_elip_matrix.T])",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "manual_N_coordiantes",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def manual_N_coordiantes():\n    latitude= manual_iframe_definition()[:, 0:1]\n    #print(latitude)\n    #This fuction allow us to define the radius of curvature in the prime vertical of the ellipsoid N matrix\n    N_list= []\n    semi_major_axis, semi_minor_axis, flattening, inverse_flattening,e,e_cuadrado= eg.get_ref_elipsoid_parameters()\n    for i, value in enumerate(latitude):\n        N_value = semi_major_axis/np.sqrt(((1)-((e_cuadrado)*(np.sin**2(value)))))\n        N_list.append(N_value)    \n    N_matrix = np.array(N_list)",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "manual_H_coordinates_array_definition",
+        "kind": 2,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "def manual_H_coordinates_array_definition():\n    N_matix = manual_H_coordinates_array_definition()\n    h_elip_matrix = manual_h_elipsoid_array_definition()\nmanual_bframe_coordinates_definition()\nmanual_iframe_definition()\nmanual_h_elipsoid_array_definition()",
         "detail": "matrices",
         "documentation": {}
     },
@@ -246,7 +538,7 @@
         "kind": 5,
         "importPath": "matrices",
         "description": "matrices",
-        "peekOfCode": "coordinates = {}\nn = 3\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop",
+        "peekOfCode": "coordinates = {}\nn = 3\niframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\nbframe_coordinates = {'REC2':[0.4,-0.4,-0.015],\n                   'REC3': [0.4,0.4,-0.015],\n                   'REC4': [-0.4,-0.4,-0.015], \n                   'REC5': [-0.4,0.4,-0.015]",
         "detail": "matrices",
         "documentation": {}
     },
@@ -255,7 +547,34 @@
         "kind": 5,
         "importPath": "matrices",
         "description": "matrices",
-        "peekOfCode": "n = 3\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop\n            # Initialize sensor dictionary",
+        "peekOfCode": "n = 3\niframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\nbframe_coordinates = {'REC2':[0.4,-0.4,-0.015],\n                   'REC3': [0.4,0.4,-0.015],\n                   'REC4': [-0.4,-0.4,-0.015], \n                   'REC5': [-0.4,0.4,-0.015]\n                   }",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_coordinates",
+        "kind": 5,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "iframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\nbframe_coordinates = {'REC2':[0.4,-0.4,-0.015],\n                   'REC3': [0.4,0.4,-0.015],\n                   'REC4': [-0.4,-0.4,-0.015], \n                   'REC5': [-0.4,0.4,-0.015]\n                   }\nh_elip_coordinates = [[55.867], [55.829], [55.883], [55.866]]",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "bframe_coordinates",
+        "kind": 5,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "bframe_coordinates = {'REC2':[0.4,-0.4,-0.015],\n                   'REC3': [0.4,0.4,-0.015],\n                   'REC4': [-0.4,-0.4,-0.015], \n                   'REC5': [-0.4,0.4,-0.015]\n                   }\nh_elip_coordinates = [[55.867], [55.829], [55.883], [55.866]]\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":",
+        "detail": "matrices",
+        "documentation": {}
+    },
+    {
+        "label": "h_elip_coordinates",
+        "kind": 5,
+        "importPath": "matrices",
+        "description": "matrices",
+        "peekOfCode": "h_elip_coordinates = [[55.867], [55.829], [55.883], [55.866]]\n# create a entry in a dictionary with a new dictionary with the a specific key + a number i of the range iteration\ndef sensors_definition(n=n):\n    n = 1 + int(input(\"Please enter a number: \"))\n    if n != \"\":\n        # check if n is not empty\n        global sensors\n        sensors = {}\n        for i in range(1, n):  # `n` should be defined before this loop\n            # Initialize sensor dictionary",
         "detail": "matrices",
         "documentation": {}
     },
@@ -273,7 +592,25 @@
         "kind": 5,
         "importPath": "ss",
         "description": "ss",
-        "peekOfCode": "iframe_coordinates = {'REC2':[[39,28,53.133637],[-0,20,7.650964]],\n                      'REC3':[[39,28,53.109885],[-0,20,7.663129]],\n                      'REC4':[[39,28,53.143535],[-0,20,7.680928]],\n                      'REC5':[[39,28,53.119474],[-0,20,7.693816]]}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)",
+        "peekOfCode": "iframe_coordinates = {'REC2':[[],[]],\n                      'REC3':[[],[]],\n                      'REC4':[[],[]],\n                      'REC5':[[],[]]}\nlat_test = 39º28'53.133637\"\n\"\"\"\niframe_coordinates_dms = {\n}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))",
+        "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "lat_test",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "lat_test = 39º28'53.133637\"\n\"\"\"\niframe_coordinates_dms = {\n}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)",
+        "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_coordinates_dms",
+        "kind": 5,
+        "importPath": "ss",
+        "description": "ss",
+        "peekOfCode": "iframe_coordinates_dms = {\n}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\nprint(iframe_values)\nprint(iframe_keys)\nprint(json.dumps(iframe_values,indent=4))\n# Adding keys as a separate row (with the help of np.vstack)\niframe_matrix = np.vstack([iframe_keys, iframe_values.T])\nprint(iframe_matrix)",
         "detail": "ss",
         "documentation": {}
     },
@@ -302,6 +639,42 @@
         "description": "ss",
         "peekOfCode": "iframe_matrix = np.vstack([iframe_keys, iframe_values.T])\nprint(iframe_matrix)",
         "detail": "ss",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_coordinates",
+        "kind": 5,
+        "importPath": "tt",
+        "description": "tt",
+        "peekOfCode": "iframe_coordinates = {\n    'REC2': [[39, 28, 53.133637], [-0, 20, 7.650964]],\n    'REC3': [[39, 28, 53.109885], [-0, 20, 7.663129]],\n    'REC4': [[39, 28, 53.143535], [-0, 20, 7.680928]],\n    'REC5': [[39, 28, 53.119474], [-0, 20, 7.693816]]\n}\niframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\n# Print the values and keys\nprint(\"Iframe Values:\")",
+        "detail": "tt",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_keys",
+        "kind": 5,
+        "importPath": "tt",
+        "description": "tt",
+        "peekOfCode": "iframe_keys = list(iframe_coordinates.keys())\niframe_values = np.array(list(iframe_coordinates.values()))\n# Print the values and keys\nprint(\"Iframe Values:\")\nprint(iframe_values)\nprint(\"\\nIframe Keys:\")\nprint(iframe_keys)\n# Print the values as JSON\nprint(\"\\nIframe Values in JSON format:\")\nprint(json.dumps(iframe_values.tolist(), indent=4))  # Use .tolist() to convert numpy array to list",
+        "detail": "tt",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_values",
+        "kind": 5,
+        "importPath": "tt",
+        "description": "tt",
+        "peekOfCode": "iframe_values = np.array(list(iframe_coordinates.values()))\n# Print the values and keys\nprint(\"Iframe Values:\")\nprint(iframe_values)\nprint(\"\\nIframe Keys:\")\nprint(iframe_keys)\n# Print the values as JSON\nprint(\"\\nIframe Values in JSON format:\")\nprint(json.dumps(iframe_values.tolist(), indent=4))  # Use .tolist() to convert numpy array to list\n# Adding keys as a separate row (with the help of np.column_stack)",
+        "detail": "tt",
+        "documentation": {}
+    },
+    {
+        "label": "iframe_matrix",
+        "kind": 5,
+        "importPath": "tt",
+        "description": "tt",
+        "peekOfCode": "iframe_matrix = np.column_stack((iframe_keys, iframe_values.reshape(iframe_values.shape[0], -1)))\nprint(\"\\nIframe Matrix:\")\nprint(iframe_matrix)",
+        "detail": "tt",
         "documentation": {}
     }
 ]

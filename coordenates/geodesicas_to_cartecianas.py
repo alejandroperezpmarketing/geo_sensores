@@ -60,7 +60,7 @@ def hight_operations(N, h=0, H=0, ter=True):
 def _geodetic_to_Cartesian(e,v,h,latitude,longitude):
     
     # lat long and h to X Y Z
-    grs80
+    #grs80
     X = (v + h)*np.cos(latitude)*np.cos(longitude) #sin and cos in radians
     Y = (v + h)*np.cos(latitude)*np.sin(longitude) #sin and cos in radians
     Z = [v*[1-((e)**2)] + h]*np.sin(latitude) #sin and cos in radians
@@ -79,5 +79,7 @@ def extract_latitude_longitude():
 def geodetic_to_Cartesian(v,h,latitude, longitude):
     hight_operations()
     _geodetic_to_Cartesian()
+
+
 
 

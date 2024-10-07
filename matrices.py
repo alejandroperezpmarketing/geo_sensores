@@ -4,7 +4,9 @@ import numpy as np
 import numpy as np
 import json
 from coordenates import degrees_operations as do
-
+from coordenates import geodesicas_to_cartecianas as gtc
+from matrices import h_elip_coordinates
+import elipsoide_grs80 as eg
 
 #The functions in this documents allows us to transform the coordinates dictionaries datasets into arrays, the bframe and iframe
 coordinates = {}
@@ -150,13 +152,35 @@ def manual_h_elipsoid_array_definition(h_elip_coordinates=h_elip_coordinates):
     #h_elip_title = ["Receptor","h_ellipsoidal"]
     h_elip_matrix = np.array(h_elip_coordinates)
     h_elip_keys = list(list(iframe_coordinates.keys()))
-    
+    #print(h_elip_matrix[:, 0:1])
     #h_elip_matrix_transposed = np.vstack([h_elip_keys,h_elip_matrix.T])
     #h_elip_matrix_transposed = h_elip_matrix_transposed.transpose()
     #print(h_elip_matrix_transposed)
     #print(h_elip_matrix)
 
     return h_elip_matrix
+
+def manual_N_coordiantes():
+    
+    latitude= manual_iframe_definition()[:, 0:1]
+    #print(latitude)
+    #This fuction allow us to define the radius of curvature in the prime vertical of the ellipsoid N matrix
+    N_list= []
+    semi_major_axis, semi_minor_axis, flattening, inverse_flattening,e,e_cuadrado= eg.get_ref_elipsoid_parameters()
+    for i, value in enumerate(latitude):
+        N_value = semi_major_axis/np.sqrt(((1)-((e_cuadrado)*(np.sin**2(value)))))
+        N_list.append(N_value)    
+    N_matrix = np.array(N_list)
+    return N_matrix
+
+manual_N_coordiantes()
+
+def manual_H_coordinates_array_definition():
+    N_matix = manual_H_coordinates_array_definition()
+    h_elip_matrix = manual_h_elipsoid_array_definition()
+    
+    
+
 
 
 manual_bframe_coordinates_definition()
